@@ -65,9 +65,8 @@ SageMaker:
 - **Walled garden:** they tend to be baked into the vendor's ecosystem. It's
   difficult and sometimes impossible to use infrastructure components such as
   databases and VPSs from different vendors in conjunction with each other.
-- **Hardware limitations:** they may still limit the hardware available
-  to you. Colab, for example, is capped at 25GB of RAM and caps uptime at 12
-  hours.
+- **Hardware limitations:** they may still limit the hardware available to you.
+  Colab, for example, is capped at 25GB of RAM and caps uptime at 12 hours.
 
 Iterative provides an alternative to these services in the form of
 [TPI (Terraform Provider Iterative)](https://github.com/iterative/terraform-provider-iterative).
@@ -86,9 +85,9 @@ Here are four benefits to TPI that might pique your interest:
 - **Developer-first experience:** {{is this really a benefit for target audience
   i.e. data scientists?}}.
 
-The guide below will explore launching a Jupyter server using TPI, allowing
-you to run notebooks on cloud instances. While we will be using AWS in our
-example, you can use Azure or GCP with
+The guide below will explore launching a Jupyter server using TPI, allowing you
+to run notebooks on cloud instances. While we will be using AWS in our example,
+you can use Azure or GCP with
 [minor modifications](https://github.com/iterative/blog-tpi-jupyter/tree/generic).
 
 # Prerequisites
@@ -123,7 +122,8 @@ need to run three commands. First, we use `terraform init` to initialize our
 configuration files. Then, although strictly speaking optional, we use
 `export TF_LOG_PROVIDER=INFO` to get better progress logging in our terminal.
 After that, we simply run `terraform apply` to launch our Jupyter server. That's
-all there is to it. TPI works its magic, and we will have our Jupyter environment ready within a few minutes.
+all there is to it. TPI works its magic, and we will have our Jupyter
+environment ready within a few minutes.
 
 "But wait, how do we access it?"
 
@@ -297,10 +297,9 @@ output "urls" {
 ```
 
 Lastly, purely for convenience, we specify the outputs of our task. Instead of
-reading through the script's output on the terminal, we extract the ngrok
-tunnel URLs and inject them into an output value. Terraform will print these
-outputs whenever we `refresh`. In this case, we get URLs to access the Jupyter
-server.
+reading through the script's output on the terminal, we extract the ngrok tunnel
+URLs and inject them into an output value. Terraform will print these outputs
+whenever we `refresh`. In this case, we get URLs to access the Jupyter server.
 
 # Conclusions
 
@@ -312,18 +311,20 @@ constraints of our local machine for prototyping machine learning projects.
 
 Now that we know how to use TPI for provisioning Jupyter workspaces, we can use
 the same approach to launch any other cloud tasks related to machine learning.
-TPI is so powerful because it provides massive configurability without a vast amount of prerequisite knowledge.
+TPI is so powerful because it provides massive configurability without a vast
+amount of prerequisite knowledge.
 
 Once we are done with our prototyping, it would be particularly interesting to
 transform our notebook into an experiment pipeline
 [that we can move to the cloud with TPI](https://dvc.org/blog/local-experiments-to-cloud-with-tpi).
 A full-fledged pipeline makes it easier to run successive experiments and find
-the best-performing model. Jupyter Notebook is an excellent tool for prototyping but
-has its limits when it comes to versioning and reproducibility. Or,
+the best-performing model. Jupyter Notebook is an excellent tool for prototyping
+but has its limits when it comes to versioning and reproducibility. Or,
 [as Andrey Cheptsov puts it](https://mlopsfluff.dstack.ai/p/notebooks-and-mlops-choose-one?s=r):
 "Notebooks and MLOps; choose one."
 
-We've got you covered if you want to learn how to transform your notebook into an experiment pipeline! The
+We've got you covered if you want to learn how to transform your notebook into
+an experiment pipeline! The
 [Iterative Tools for Data Scientists & Analysts](https://learn.iterative.ai/course/data-scientist-path)
 course covers this topic extensively and is entirely free to follow. It's easier
 to accomplish than it may seem at first.
